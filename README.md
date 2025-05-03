@@ -94,7 +94,7 @@ AI-Chatbot
 
 - Dockerfile: Dockerfile to build the ReactJS container.
 
-### docker-compose.yml: This file defines the services (frontend and backend) and their relationship in Docker. You can build and run both containers together using this.
+#### docker-compose.yml: This file defines the services (frontend and backend) and their relationship in Docker. You can build and run both containers together using this.
 
 ## Conclusion
 This project provides a chatbot interface using LangChain and Flask with live internet search integration using DuckDuckGo. It is containerized with Docker, and you can also deploy it to a Kubernetes cluster.
