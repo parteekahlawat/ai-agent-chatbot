@@ -1,20 +1,21 @@
 import os
 from flask import Flask, request, jsonify
-from flask_cors import CORS  # Import CORS
+from flask_cors import CORS 
+
 from langchain.agents import initialize_agent, Tool, AgentType
 from langchain.memory import ConversationBufferMemory
-# from langchain.llms import ChatGoogleGenerativeAI
 from langchain_community.tools import DuckDuckGoSearchResults
 from langchain_google_genai import ChatGoogleGenerativeAI
 from langchain.schema import HumanMessage
-# from langchain_core.messages import HumanMessage
+
 from dotenv import load_dotenv
 load_dotenv()
-# llm = ChatGoogleGenerativeAI(model="gemini-2.0-flash")
-# Initialize Flask app
+
 app = Flask(__name__)
 CORS(app) 
+
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY", "GOOGLE-KEY-NOT-FOUND")
+
 google_ai_llm = ChatGoogleGenerativeAI(
     model="gemini-2.0-flash",
     temperature=0,
@@ -24,10 +25,8 @@ google_ai_llm = ChatGoogleGenerativeAI(
 )
 
 
-# DuckDuckGo search tool setup for live data
 ddg_search = DuckDuckGoSearchResults()
 
-# Memory to track conversation history and reasoning steps
 memory = ConversationBufferMemory(memory_key="history", return_messages=True)
 
 # Define tools available to the agent
@@ -68,7 +67,6 @@ def ask():
     if not question:
         return jsonify({"error": "Question is required"}), 400
     try:
-        # Process the question and get the final answer and summary
         final_answer, step_summary = get_answer_and_summary(question)
         return jsonify({
             "final_answer": final_answer,
