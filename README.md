@@ -8,7 +8,7 @@ This project demonstrates an AI chatbot built using **LangChain** and **Flask** 
 - **Backend**: Flask, LangChain, LangChain Google Generative AI, DuckDuckGoSearch
 - **LLM**: Google Gemini (via LangChain)
 - **Search Integration**: DuckDuckGo API via LangChain
-- **Deployment**: Docker, Kubernetes
+- **Deployment**: Docker
 
 ---
 
