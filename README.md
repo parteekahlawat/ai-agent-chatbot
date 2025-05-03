@@ -28,7 +28,7 @@ This project demonstrates an AI chatbot built using **LangChain** and **Flask** 
    git clone https://github.com/your-repository-name.git
    cd your-repository-name
    
-   Note: Add the google gemini api key in the docker-compose.yml file
+   Note: Add the google gemini api key(GOOGLE_API_KEY) in the docker-compose.yml file
 
    Run command:
    docker compose build
