@@ -54,7 +54,7 @@ def get_answer_and_summary(question):
 
     final_answer = agent.run(question)
     reasoning_steps = memory.load_memory_variables({})
-    # print(final_answer.observation)
+
     step_summary = f"""{reasoning_steps}"""
     
     return final_answer, step_summary
