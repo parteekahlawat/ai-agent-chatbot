@@ -1,0 +1,21 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    ports:
+      - "5000:5000"
+    networks:
+      - network
+    environment:
+      GOOGLE_API_KEY: <Your-api-key>
+  frontend:
+    build:
+      context: ./ai-chatbot
+    networks:
+      - network
+    ports:
+      - "3000:3000"
+    
+networks:
+  network:
+    driver: bridge
